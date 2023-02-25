@@ -7,7 +7,7 @@
 
 <body>
 
-    <h2>Raajitha Vardhanapu Painter entry</h2>
+    <h2>Painter entry Raajitha Vardhanapu</h2>
 
     <form>
         <label for="form1_good">The hidden painter name</label>
@@ -18,15 +18,11 @@
 
         <input type="button" onclick="checkPainter()" value="Check the guess">
     </form>
-
-
     <p id="result">This text will be replaced </p>
-
     <script>
         var good = 0;
         var oops = 0;
         function checkPainter() {
-
             console.log("Getting form values")
             painter = document.getElementById("form1_good").value
             guesspainter = document.getElementById("form1_oops").value
@@ -35,16 +31,13 @@
                 good = good + 1;
                 alert("You got it right");
                 out.innerHTML = good;
-
             } else {
                 oops = oops + 1;
                 alert("Sorry")
                 out.innerHTML = oops;
-
             }
         }
     </script>
-
 </body>
 
 </html>
