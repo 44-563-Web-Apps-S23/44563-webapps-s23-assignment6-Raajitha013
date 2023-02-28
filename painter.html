@@ -19,6 +19,12 @@
         <input type="button" onclick="checkPainter()" value="Check the guess">
     </form>
     <p id="result">This text will be replaced </p>
+
+    <div class="container">
+        <img src="veronica.jpg" id="image" width="100" height="100" onclick="selectImage()">
+    </div>
+
+
     <script>
         var good = 0;
         var oops = 0;
@@ -37,9 +43,29 @@
                 out.innerHTML = oops;
             }
         }
+
+        function selectImage() {
+
+            switch (useImage) {
+                case 1:
+                    useImage = 2; document.getElementById("imgid").src = "veronica.jpg"; 
+                    break;
+                case 2:
+                    useImage = 3; document.getElementById("imgid").src = "af.jpg"; 
+                    break;
+                case 3:
+                    useImage = 1; document.getElementById("imgid").src = "dahlia.jpg"; 
+                    break;
+
+
+            }
+
+        }
     </script>
 
-    
+
+
+
 </body>
 
 </html>
