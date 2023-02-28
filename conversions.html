@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>Conversions Using  Bootstrap</title>
+<body>
+
+<h2>Raajitha Vardhanapu shows currency conversions</h2>
+
+<form>
+    <label for="form1_age">Enter base amount</label>
+    <input type ="number" id="base_element" name="form1_age" min=10 max=50 step=2 value=50> <br>
+
+    <label for="form1_nick">Enter the conversion rate </label>
+    <input type ="number" id="conversion_element" name="form1_nick" autofocus value=35> <br>
+
+    <input type="button" onclick="convert()" value="Show conversions">
+</form>
+
+
+<p id="result">Displays conversion</p>
+
+<script> 
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+
+var toShow = '';
+function convert(){
+    var base=document.getElementById("base_element").value;
+    var conv=document.getElementById("conversion_element").value;
+    var base1=base;
+for (let i = 1; i <=5; i++) {
+    console.log(2**i);
+    
+    toShow=toShow+base+' is '+Math.round(base*conv * 100) / 100+'; ';
+    base=base1*(2**i);
+    
+}
+document.getElementById("result").innerHTML='Conversions are: '+toShow;
+    
+}
+
+</script>
+
+</body>
+</html> 
