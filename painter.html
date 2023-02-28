@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 <head>
     <title>Structuring the web with JavaScript</title>
 </head>
@@ -20,15 +22,11 @@
     </form>
     <p id="result">This text will be replaced </p>
 
-    <div class="container">
-        <img src="veronica.jpg" id="image" width="100" height="100" onclick="selectImage()">
-    </div>
-
 
     <script>
         var good = 0;
         var oops = 0;
-        var useImage=1;
+
         function checkPainter() {
             console.log("Getting form values")
             painter = document.getElementById("form1_good").value
@@ -44,26 +42,31 @@
                 out.innerHTML = oops;
             }
         }
-
+    </script>
+    <div class="container">
+        <img src="veronica.jpg" id="image" width="100" height="100" onclick="selectImage()">
+    </div>
+    <script>
+        var useImage = 1;
         function selectImage() {
 
             switch (useImage) {
                 case 1:
-                    useImage = 2; document.getElementById("image").src = "veronica.jpg"; 
+                    useImage = 2; document.getElementById("image").src = "veronica.jpg";
                     break;
                 case 2:
-                    useImage = 3; document.getElementById("image").src = "af.jpg"; 
+                    useImage = 3; document.getElementById("image").src = "dahlia.jpg";
                     break;
                 case 3:
-                    useImage = 1; document.getElementById("image").src = "dahlia.jpg"; 
+                    useImage = 1; document.getElementById("image").src = "af.jpg";
                     break;
 
 
             }
 
         }
-    </script>
 
+    </script>
 
 
 
