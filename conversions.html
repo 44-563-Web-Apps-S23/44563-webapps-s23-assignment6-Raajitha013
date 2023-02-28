@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Conversions Using  Bootstrap</title>
+<title>Conversions Using  JavaScript</title>
 <body>
 
 <h2>Raajitha Vardhanapu shows currency conversions</h2>
@@ -36,32 +36,38 @@
 
 <script> 
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
-
 var toShow = '';
 function convert(){
-    var base=document.getElementById("base_element").value;
-    var conv=document.getElementById("conversion_element").value;
-    var base1=base;
+    var baseelmnt=document.getElementById("base_element").value;
+    var convelmnt=document.getElementById("conversion_element").value;
+    var base1=baseelmnt;
 for (let i = 1; i <=5; i++) {
     console.log(2**i);
     
-    toShow=toShow+base+' is '+Math.round(base*conv * 100) / 100+'; ';
-    base=base1*(2**i);
+    toShow=toShow+baseelmnt+' is '+Math.round(baseelmnt*convelmnt * 100) / 100+'; ';
+    baseelmnt=base1*(2**i);
     
 }
+document.getElementById("result").innerHTML='Conversions are: '+toShow;
+    
+}
+
+function chooseOp(){
+var baseelmnt=document.getElementById("base_element").value;
+var convelmnt=document.getElementById("conversion_element").value;
+var op=document.querySelector('input[name="action"]:checked').value;
+console.log('operation',op);
+console.log('conversion',convelmnt);
+var base1=baseelmnt;
+if(op=='minimum'){
+    document.getElementById("result1").innerHTML='Min of '+baseelmnt+' and '+convelmnt+' is '+ Math.min(baseelmnt,convelmnt);
+}
+else if(op=='maximum'){
+    document.getElementById("result1").innerHTML='Max of '+baseelmnt+' and '+convelmnt+' is '+ Math.max(baseelmnt,convelmnt);
+}else if(op=='mean'){
+    document.getElementById("result1").innerHTML='Mean of '+baseelmnt+' and '+convelmnt+' is '+ (parseInt(baseelmnt) + parseInt(convelmnt))/2;
+}
+
 document.getElementById("result").innerHTML='Conversions are: '+toShow;
     
 }
